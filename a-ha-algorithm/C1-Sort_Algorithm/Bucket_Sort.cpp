@@ -1,15 +1,24 @@
 #include <cstdio>
 #include <vector>
 using namespace std;
-
+#define MAX 1001
 int main()
 {
-    int num, i, temp;
+    int num, i, j, temp;
     scanf("%d", &num);
-    vector<int> data;
+    vector<int> book(MAX, 0);
     for (i = 0; i < num; i++)
     {
         scanf("%d", &temp);
-        data.push_back(temp);
+        book[temp]++;
+    }
+
+    for (j = 0; j < MAX; j++)
+    {
+        while (book[j] > 0)
+        {
+            printf(" %d ", j);
+            book[j]--;
+        }
     }
 }
