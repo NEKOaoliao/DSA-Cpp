@@ -10,7 +10,7 @@ int main()
     for (i = 0; i < num; i++)
     {
         scanf("%d", &temp);
-        book[temp]++;
+        book[temp]++; //向桶里放
     }
 
     for (j = 0; j < MAX; j++)
@@ -18,7 +18,7 @@ int main()
         while (book[j] > 0)
         {
             printf(" %d ", j);
-            book[j]--;
+            book[j]--; //按顺序从桶里取出来
         }
     }
 }
